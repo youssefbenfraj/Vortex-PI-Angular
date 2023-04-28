@@ -27,9 +27,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/style.css",
+              "src/assets/lib/flaticon/font/flaticon.css",
+              "src/assets/lib/owlcarousel/assets/owl.carousel.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./node_modules/owl.carousel/dist/owl.carousel.min.js"
+          ]
+          
           },
           "configurations": {
             "production": {
@@ -94,9 +103,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/bootstrap.min.css",
+              "src/assets/css/style.css",
+              "src/assets/lib/flaticon/font/flaticon.css",
+              "src/assets/lib/owlcarousel/assets/owl.carousel.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./node_modules/owl.carousel/dist/owl.carousel.min.js"
+          ]
+          
           }
         }
       }
