@@ -1,0 +1,258 @@
+
+
+
+
+<!-- Side bar-->
+<div class="sidebar">
+  <div class="admin-profile">
+   
+    <img src="../assets/admin/img/avatar5.png" alt="Admin Profile Picture" class="admin-pic">
+    <h2 class="admin-name">Administrator</h2>
+    <div class="online-status">
+      <div class="dot"></div>
+      <span class="online-text">Online</span>
+    </div>
+  </div>
+  <div class="sidebar-menu">
+    <ul>
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Learning Resources</a></li>
+      <li><a href="#">Donations</a></li>
+      <li><a href="#">Pet Shop</a></li>
+      <li><a href="#">Pet Adoption</a></li>
+      <li><a href="#">Social Network</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- NavBar -->
+<nav class="navbari">
+  <div class="navbari-toggler">
+    <img class="navbari-icon" src="../assets/img/navi.png">
+  </div>
+ 
+ 
+  <div class="navbari-right">
+    <div class="notification-icon">
+      
+      <img class="navbari-icon" src="../assets/img/logout.png">
+    </div>
+    <div class="logout-icon">
+      <i class="fa fa-power-off"></i>
+    </div>
+  </div>
+ 
+</nav>
+
+<!-- Charts  -->
+
+<section class="chart-section">
+  <h2 class="chart-section__title">Learning Resource Chart</h2>
+  <div class="chart-container">
+    <canvas id="myChart"></canvas>
+  </div>
+</section>
+
+<!-- Add-->
+<section class="learning-resource">
+<section class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" style="color: black;" href="#">Add Learning Resource</a>
+    <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
+    <button class="btn btn-outline-success"  data-bs-toggle="modal" (click)="openModal()" data-bs-target="#exampleModal">Add</button>
+    
+  </div>
+
+
+  </section>
+
+  <!-- Open add modal-->
+
+    <!-- add user Modal -->
+    <div class="modal fade" id="addLR"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Learning Resource</h5>
+         
+          </div>
+          <div class="modal-body"  >
+          
+              <form  [formGroup]="lrDetail">
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Title</label>
+                      <input type="text" formControlName="title_learningr" class="form-control" id="title_learningr" aria-describedby="emailHelp">
+                    </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Description</label>
+                    <input type="email" formControlName="desc_learningr" class="form-control" id="desc_learningr" aria-describedby="">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Type</label>
+                     <select formControlName="type_learningr" class="form-select" aria-label="Default select example">
+                     
+                      <option value="0">IMAGE</option>
+                      <option value="1">VIDEO</option>
+                      <option value="2">ARTICLE</option>
+                      <option value="3">BOOK</option>
+                      <option value="4">OTHER</option>
+
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">URL</label>
+                      <input type="text" formControlName="url_learningr" class="form-control" id="url_learningr" aria-describedby="">
+                    </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Theme</label>
+                    <!-- <input type="email" formControlName="theme" class="form-control" id="theme" aria-describedby=""> -->
+                    <select formControlName="theme" class="form-select" aria-label="Default select example">
+                     
+                      <option value="0">PET_TRAINING</option>
+                      <option value="1">PET_BEHAVIOR</option>
+                      <option value="2">PET_GROOMING</option>
+                      <option value="3">PET_HEALTH_AND_WELLNESS</option>
+                      <option value="4">PET_PRODUCTS_AND_ACCESSORIES</option>
+
+                    </select>
+                  </div>
+                 
+    
+                </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" (click)="addLR()" class="btn btn-outline-success" >Add</button>
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" >Close</button>
+         
+          </div>
+      </div>
+      </div>
+  </div>
+
+   <!-- Open add modal-->
+
+
+
+
+
+     <!-- Open edit modal-->
+
+    <!-- edit lr Modal -->
+    <div class="modal fade" id="editLR"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit Learning Resource</h5>
+         
+          </div>
+          <div class="modal-body" >
+          
+              <form  [formGroup]="lrDetail">
+                <div class="mb-3">
+                  <label for="exampleInputEmail1" class="form-label">ID</label>
+                  <input type="id" formControlName="id_learningr" class="form-control" id="id_learningr" aria-describedby="emailHelp" readonly="readonly">
+                </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">Title</label>
+                      <input type="text" formControlName="title_learningr" class="form-control" id="title_learningr" aria-describedby="emailHelp">
+                    </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Description</label>
+                    <input type="email" formControlName="desc_learningr" class="form-control" id="desc_learningr" aria-describedby="">
+                  </div>
+                  <div  class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Type</label>
+                     <!-- <input type="text" formControlName="type_learningr" class="form-control" id="type_learningr" aria-describedby=""> -->
+                     <select formControlName="type_learningr" class="form-select" aria-label="Default select example">
+                      <!-- <option *ngFor="let lr of lrList" [value]="lr.type_learningr" >{{ lr.type_learningr }}</option> -->
+                      <option selected *ngFor="let lr of lrList" >{{lr.type_learningr}}</option>
+                      <option value="0">IMAGE</option>
+                      <option value="1">VIDEO</option>
+                      <option value="2">ARTICLE</option>
+                      <option value="3">BOOK</option>
+                      <option value="4">OTHER</option>
+
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">URL</label>
+                      <input type="text" formControlName="url_learningr" class="form-control" id="url_learningr" aria-describedby="">
+                    </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Theme</label>
+                     <!-- <input type="email" formControlName="theme" class="form-control" id="theme" aria-describedby=""> -->
+                     <select formControlName="theme" class="form-select" aria-label="Default select example">
+                      <!-- <option *ngFor="let lr of lrList" [value]="lr.theme" >{{ lr.theme }}</option> -->
+                    <option selected *ngFor="let lr of lrList" >{{lr.theme}}</option>
+                      <option value="0">PET_TRAINING</option>
+                      <option value="1">PET_BEHAVIOR</option>
+                      <option value="2">PET_GROOMING</option>
+                      <option value="3">PET_HEALTH_AND_WELLNESS</option>
+                      <option value="4">PET_PRODUCTS_AND_ACCESSORIES</option>
+
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Creation date</label>
+                    <input type="text" formControlName="creationdate_learningr" class="form-control" id="creationdate_learningr" aria-describedby="emailHelp" readonly="readonly">
+                  </div>
+                 
+    
+                </form>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button"  (click)="updateLR()" class="btn btn-outline-info" >Edit</button>
+          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal" >Close</button>
+         
+          </div>
+      </div>
+      </div>
+  </div>
+
+   <!-- Open edit modal-->
+
+
+
+
+   <!-- GET ALL LEARNING RESOURCES-->
+   <table class="get-all">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Type</th>
+        <th scope="col">URL</th>
+        <th scope="col">Theme</th>
+        <th scope="col">Creation Date</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let lr of lrList">
+        <th scope="row">{{lr.id_learningr}}</th>
+        <td>{{lr.title_learningr}}</td>
+        <td>{{lr.desc_learningr}}</td>
+        <td>{{lr.type_learningr}}</td>
+        <td>{{lr.url_learningr}}</td>
+        <td>{{lr.theme}}</td>
+        <td>{{lr.creationdate_learningr}}</td>
+        <td>
+          <button (click)="openModalEdit()" (click)="editLr(lr)"  class="btn btn-outline-info"  >Edit</button>
+          <button type="button" (click)="deleteLR(lr)" class="btn btn-outline-danger" >Delete</button>
+        </td>
+      </tr>
+  
+    </tbody>
+  </table>
+
+</section>
+
+
+
+
+
+
+
