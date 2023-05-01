@@ -49,6 +49,7 @@ export class LearningResourceService {
     const url = 'http://localhost:8075/learning-resource-type-stats';
     return this.http.get<any[]>(url);
   }
+
   
   getLRStatsByTheme(): Observable<any[]> {
     const url = 'http://localhost:8075/learning-resource-theme-stats';

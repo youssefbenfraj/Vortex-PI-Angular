@@ -14,6 +14,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { Chart } from 'chart.js';
 import { registerables } from 'chart.js';
 import { AllLearningResourcesComponent } from './components/all-learning-resources/all-learning-resources.component';
+import { ChatbotAiComponent } from './components/chatbot-ai/chatbot-ai.component';
+import { NbChatModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 Chart.register(...registerables);
 
 @NgModule({
@@ -23,14 +29,20 @@ Chart.register(...registerables);
     LearningResourceComponent,
     AdminLearningResourceComponent,
     AllLearningResourcesComponent,
+    ChatbotAiComponent,
     
   ],
+
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule  ,
+    NbThemeModule.forRoot({ name: 'dark' }),
+    NbLayoutModule,
+    NbChatModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

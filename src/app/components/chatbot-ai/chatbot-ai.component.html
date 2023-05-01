@@ -4,13 +4,14 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Learning Resources</title>
+    <title>Rescue The Stray</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="Free HTML Templates" name="keywords">
     <meta content="Free HTML Templates" name="description">
 
     <!-- Favicon -->
-    <link href="../assets/img/favicon.ico" rel="icon">
+    <link href="img/favicon.ico" rel="icon">
+
 
 </head>
 
@@ -53,24 +54,25 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow-sm py-3 py-lg-0 px-3 px-lg-0 mb-5">
         <a href="index.html" class="navbar-brand ms-lg-5">
-            <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>Learning Resources</h1>
+            <h1 class="m-0 text-uppercase text-dark"><i class="bi bi-shop fs-1 text-primary me-3"></i>PET BOT</h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0">
-                <a href="index.html" class="nav-item nav-link">Home</a>
-                <a (click)="gotoChatbot()" class="nav-item nav-link">PetBot</a>
-                <a href="service.html" class="nav-item nav-link active">Learning Resources</a>
+                <a href="" class="nav-item nav-link">Home</a>
+                <a href="pet-bot" class="nav-item nav-link active ">PetBot</a>
+                <a (click)="gotoLRs()" class="nav-item nav-link">Learning Resources</a>
+                <a href="service.html" class="nav-item nav-link">Service</a>
                 <a href="product.html" class="nav-item nav-link">Product</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle " data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
                         <a href="price.html" class="dropdown-item">Pricing Plan</a>
-                        <a href="team.html" class="dropdown-item">The Team</a>
+                        <a href="team.html" class="dropdown-item active">The Team</a>
                         <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                        <a href="blog.html" class="dropdown-item active">Blog Grid</a>
+                        <a href="blog.html" class="dropdown-item">Blog Grid</a>
                         <a href="detail.html" class="dropdown-item">Blog Detail</a>
                     </div>
                 </div>
@@ -81,125 +83,47 @@
     <!-- Navbar End -->
 
 
-    <!-- Blog Start -->
-    <div class="container py-5" style="margin-top: -10px;">
-        <div class="row g-5">
-            <!-- Blog list Start -->
-            <div class="col-lg-8" *ngFor="let lr of lrsList">
-                <div class="blog-item mb-5">
-                    <div class="row g-0 bg-light overflow-hidden" >
-                        <div class="col-12 col-sm-5 h-100">
-                            <img class="img-fluid h-100" src="{{lr.url_learningr}}"   style="object-fit: cover; margin-top: 20px;">
-                            <img class="img-fluid h-100"  src="../assets/img/blog-1.jpg"  style="object-fit: cover; margin-top: -20px;">
+    <!-- CHAT Start -->
 
-                           <!-- <video controls>
-                                <source [src]="lr.url_learningr" >
-                              </video>  -->
-                        </div>
-                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center" style="margin-top: -50px;">
-                            <div class="p-4">
-                                <div class="d-flex mb-3">
-                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>{{lr.type_learningr}}</small>
-                                    <small><i class="bi bi-calendar-date me-2"></i>{{lr.creationdate_learningr}}</small>
-                                </div>
-                                <h5 class="text-uppercase mb-3">{{lr.title_learningr}}</h5>
-                                <p>{{lr.desc_learningr}}</p>
-                                <a class="text-primary text-uppercase" (click)="gotoLR()" >Read More<i class="bi bi-chevron-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-              
+    <!-- <nb-chat  title="Petbot" size="large">
+        <nb-chat-message  *ngFor="let msg of messages"
+                         [type]="msg.type"
+                         [reply]="msg.reply"
+                         [message]="msg.text"
+                         [sender]="msg.user.name"
+                         [date]="msg.date"
+                         [avatar]="msg.user.avatar">
+        </nb-chat-message>
+        <nb-chat-form  (send)="sendMessage($event)">
+        </nb-chat-form>
+    </nb-chat> -->
+
+    <div class="chatbot">
+        
+        <div class="chat-messages">
+          <div class="chat-message" *ngFor="let msg of messages">
+            <div class="message-header">
+              <img class="avatar" src="{{ msg.user.avatar }}" alt="{{ msg.user.name }}">
+              <h3 class="sender">{{ msg.user.name }}</h3>
+              <p class="date">{{ msg.date }}</p>
             </div>
-
-               
-            <!-- Blog list End -->
-
-            <!-- Sidebar Start -->
-            <div class="col-lg-4" style="margin-top: -800px;">
-                <!-- Search Form Start -->
-                <div class="mb-5">
-                    <div class="input-group">
-                        <input type="text" class="form-control p-3" placeholder="Keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
-                    </div>
-                </div>
-                <!-- Search Form End -->
-
-                <!-- Category Start -->
-                <div class="mb-5" >
-                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4" >Categories</h3>
-                    <div class="d-flex flex-column justify-content-start" *ngFor="let lr of lrsList">
-                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>{{lr.type_learningr}}</a>
-                      
-                    </div>
-                </div>
-                <!-- Category End -->
-
-                <!-- Recent Post Start -->
-                <div class="mb-5"   >
-                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Recent Post</h3>
-                    <div class="d-flex overflow-hidden mb-3" *ngFor="let lr of lrsList">
-                        <img class="img-fluid" src="{{lr.url_learningr}}"  style="width: 100px; height: 100px; object-fit: cover;" alt="">
-                        <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0">{{lr.title_learningr}}
-                        </a>
-                    </div>
-                   
-                </div>
-                <!-- Recent Post End -->
-
-                
-                <!-- Theme Start -->
-                <div class="mb-5" >
-                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4" >Themes</h3>
-                    <div class="d-flex flex-column justify-content-start"  *ngFor="let lr of lrsList">
-                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>{{lr.theme}}</a>
-                      
-                    </div>
-                </div>
-                <!-- Theme End -->
-
-
-                <!-- Image Start -->
-                <div class="mb-5">
-                    <img src="../assets/img/blog-1.jpg" alt="" class="img-fluid rounded">
-                </div>
-                <!-- Image End -->
-
-                <!-- Tags Start -->
-                <div class="mb-5">
-                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Tag Cloud</h3>
-                    <div class="d-flex flex-wrap m-n1">
-                        <a href="" class="btn btn-primary m-1">Design</a>
-                        <a href="" class="btn btn-primary m-1">Development</a>
-                        <a href="" class="btn btn-primary m-1">Marketing</a>
-                        <a href="" class="btn btn-primary m-1">SEO</a>
-                        <a href="" class="btn btn-primary m-1">Writing</a>
-                        <a href="" class="btn btn-primary m-1">Consulting</a>
-                        <a href="" class="btn btn-primary m-1">Design</a>
-                        <a href="" class="btn btn-primary m-1">Development</a>
-                        <a href="" class="btn btn-primary m-1">Marketing</a>
-                        <a href="" class="btn btn-primary m-1">SEO</a>
-                        <a href="" class="btn btn-primary m-1">Writing</a>
-                        <a href="" class="btn btn-primary m-1">Consulting</a>
-                    </div>
-                </div>
-                <!-- Tags End -->
-
-                <!-- Plain Text Start -->
-                <div>
-                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Plain Text</h3>
-                    <div class="bg-light text-center" style="padding: 30px;">
-                        <p>Vero sea et accusam justo dolor accusam lorem consetetur, dolores sit amet sit dolor clita kasd justo, diam accusam no sea ut tempor magna takimata, amet sit et diam dolor ipsum amet diam</p>
-                        <a href="" class="btn btn-primary py-2 px-4">Read More</a>
-                    </div>
-                </div>
-                <!-- Plain Text End -->
+            <div class="message-content" [class.reply]="msg.reply" [class.question]="msg.type === 'question'">
+              <p>{{ msg.text }}</p>
             </div>
-            <!-- Sidebar End -->
+          </div>
         </div>
-    </div>
-    <!-- Blog End -->
+        <form class="chat-form" (submit)="sendMessage($event)">
+          <input type="text" placeholder="Type your message here" name="message">
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      
+
+
+    
+      
+
+    <!-- CHAT End -->
 
 
     <!-- Footer Start -->
@@ -286,7 +210,6 @@
     <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
 
-  
 </body>
 
 </html>

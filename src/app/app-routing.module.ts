@@ -4,6 +4,7 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { LearningResourceComponent } from './components/learning-resource/learning-resource.component';
 import { AdminLearningResourceComponent } from './components/admin-learning-resource/admin-learning-resource.component';
 import { AllLearningResourcesComponent } from './components/all-learning-resources/all-learning-resources.component';
+import { ChatbotAiComponent } from './components/chatbot-ai/chatbot-ai.component';
 
 const routes: Routes = [
 
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path:'all-learning-resources',
     component: AllLearningResourcesComponent
+  },
+  {
+    path:'pet-bot',
+    component: ChatbotAiComponent
   }
 
 ];

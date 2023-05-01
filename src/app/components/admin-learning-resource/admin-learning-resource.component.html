@@ -35,7 +35,6 @@
   <div class="navbari-right">
     <div class="notification-icon">
       
-      <img class="navbari-icon" src="../assets/img/logout.png">
     </div>
     <div class="logout-icon">
       <i class="fa fa-power-off"></i>
@@ -47,10 +46,20 @@
 <!-- Charts  -->
 
 <section class="chart-section">
-  <h2 class="chart-section__title">Learning Resource Chart</h2>
+  <h2 class="chart-section__title">Learning Resource Chart By Type</h2>
   <div class="chart-container">
     <canvas id="myChart"></canvas>
   </div>
+</section>
+
+
+<section class="theme">
+  <h2 class="chart-section__title">Learning Resource Chart By Theme</h2>
+<div >
+  <canvas id="myNewChart"></canvas>
+</div>
+
+
 </section>
 
 <!-- Add-->
@@ -58,8 +67,9 @@
 <section class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" style="color: black;" href="#">Add Learning Resource</a>
+    <button class="btn btn-outline-success" style="margin-right: 1300px;" data-bs-toggle="modal" (click)="openModal()" data-bs-target="#exampleModal">Add</button>
     <button class="navbar-toggler"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
-    <button class="btn btn-outline-success"  data-bs-toggle="modal" (click)="openModal()" data-bs-target="#exampleModal">Add</button>
+    
     
   </div>
 
@@ -113,6 +123,10 @@
                       <option value="2">PET_GROOMING</option>
                       <option value="3">PET_HEALTH_AND_WELLNESS</option>
                       <option value="4">PET_PRODUCTS_AND_ACCESSORIES</option>
+                      <option value="5">PET_INSURANCE</option>
+                      <option value="6">ANIMAL_RIGHTS_AND_WELFARE</option>
+                      <option value="7">VETERINARY_MEDICINE</option>
+                      <option value="8">ANIMAL_PSYCHOLOGY</option>
 
                     </select>
                   </div>
@@ -185,11 +199,15 @@
                      <select formControlName="theme" class="form-select" aria-label="Default select example">
                       <!-- <option *ngFor="let lr of lrList" [value]="lr.theme" >{{ lr.theme }}</option> -->
                     <option selected *ngFor="let lr of lrList" >{{lr.theme}}</option>
-                      <option value="0">PET_TRAINING</option>
-                      <option value="1">PET_BEHAVIOR</option>
-                      <option value="2">PET_GROOMING</option>
-                      <option value="3">PET_HEALTH_AND_WELLNESS</option>
-                      <option value="4">PET_PRODUCTS_AND_ACCESSORIES</option>
+                    <option value="0">PET_TRAINING</option>
+                    <option value="1">PET_BEHAVIOR</option>
+                    <option value="2">PET_GROOMING</option>
+                    <option value="3">PET_HEALTH_AND_WELLNESS</option>
+                    <option value="4">PET_PRODUCTS_AND_ACCESSORIES</option>
+                    <option value="5">PET_INSURANCE</option>
+                    <option value="6">ANIMAL_RIGHTS_AND_WELFARE</option>
+                    <option value="7">VETERINARY_MEDICINE</option>
+                    <option value="8">ANIMAL_PSYCHOLOGY</option>
 
                     </select>
                   </div>
@@ -224,7 +242,7 @@
         <th scope="col">Title</th>
         <th scope="col">Description</th>
         <th scope="col">Type</th>
-        <th scope="col">URL</th>
+        <th scope="col" >URL</th>
         <th scope="col">Theme</th>
         <th scope="col">Creation Date</th>
         <th scope="col">Action</th>

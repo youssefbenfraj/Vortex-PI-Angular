@@ -29,6 +29,9 @@ export class AdminLearningResourceComponent implements OnInit {
   config : any;
   chartData : number[] = [];
   chartDatalabels : any[] = [];
+
+  chartDataTheme : number[] = [];
+  chartDatalabelsTheme : any[] = [];
   
     ngOnInit(): void{
 
@@ -82,7 +85,7 @@ export class AdminLearningResourceComponent implements OnInit {
           data: this.chartData,
           borderWidth: 5,
           borderColor: 'white',
-          backgroundColor: ['pink', 'yellow', 'blue', 'grey', 'red'],
+          backgroundColor: ['pink', 'yellow', 'lightblue', 'grey', 'red'],
         },
       ],
     },
@@ -94,6 +97,43 @@ export class AdminLearningResourceComponent implements OnInit {
 
 
       //end chart
+
+
+
+      // chart 2 
+
+       // get stats by type
+       this.lrservice.getLRStatsByTheme().subscribe((data) => {
+        for (let i = 0; i < data.length; i++) {
+          this.chartDataTheme.push(data[i].data);
+          this.chartDatalabelsTheme.push(data[i].label);
+        }
+      
+        // initialize chart
+        this.ctx = document.getElementById('myNewChart');
+        this.config = {
+          type: 'bar',
+          options: {},
+          data: {
+            labels: this.chartDatalabelsTheme,
+            datasets: [
+              {
+                label: 'Chart Data',
+                data: this.chartDataTheme,
+                borderWidth: 5,
+                borderColor: 'white',
+                backgroundColor: ['pink', 'yellow', 'lightblue', 'grey', 'red', 'violet', 'brown', 'blue'],
+              },
+            ],
+          },
+        };
+        const myNewChart = new Chart(this.ctx, this.config);
+      });
+
+
+
+
+      // chart 2
       
     }
   

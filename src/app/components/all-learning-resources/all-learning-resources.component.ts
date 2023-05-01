@@ -37,4 +37,9 @@ export class AllLearningResourcesComponent implements OnInit {
     this.router.navigate(['/learning-resource']);
   }
 
+  gotoChatbot(){
+    this.router.navigate(['/pet-bot']);
+  }
+
+
 }
