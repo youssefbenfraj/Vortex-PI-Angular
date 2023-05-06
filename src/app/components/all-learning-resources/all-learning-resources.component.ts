@@ -32,9 +32,8 @@ export class AllLearningResourcesComponent implements OnInit {
     });
   }
 
-  gotoLR()
-  {
-    this.router.navigate(['/learning-resource']);
+  gotoLR(lr: LearningResource) {
+    this.router.navigate(['/learning-resource', lr.id_learningr]);
   }
 
   gotoChatbot(){

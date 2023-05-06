@@ -92,10 +92,6 @@ export class AdminLearningResourceComponent implements OnInit {
   };
   const myChart = new Chart(this.ctx, this.config);
 });
-
-
-
-
       //end chart
 
 
@@ -145,7 +141,7 @@ export class AdminLearningResourceComponent implements OnInit {
       this.lrObj.desc_learningr = this.lrDetail.value.desc_learningr;
       this.lrObj.type_learningr = this.lrDetail.value.type_learningr;
       this.lrObj.url_learningr = this.lrDetail.value.url_learningr;
-      this.lrObj.theme = [ this.lrDetail.value.theme];
+      this.lrObj.theme =  this.lrDetail.value.theme;
       this.lrObj.creationdate_learningr = this.lrDetail.value.creationdate_learningr;
 
       this.lrservice.addLR(this.lrObj).subscribe(res=>{
@@ -174,7 +170,7 @@ export class AdminLearningResourceComponent implements OnInit {
       this.lrObj.desc_learningr = this.lrDetail.value.desc_learningr;
       this.lrObj.type_learningr = this.lrDetail.value.type_learningr;
       this.lrObj.url_learningr = this.lrDetail.value.url_learningr;
-      this.lrObj.theme = [];
+      this.lrObj.theme =  this.lrDetail.value.theme;
       this.lrObj.creationdate_learningr = this.lrDetail.value.creationdate_learningr;
   
       this.lrservice.updateLR(this.lrObj).subscribe(res=>{

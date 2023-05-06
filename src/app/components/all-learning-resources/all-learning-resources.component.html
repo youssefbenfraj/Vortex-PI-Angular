@@ -15,39 +15,40 @@
 </head>
 
 <body>
-    <!-- Topbar Start -->
-    <div class="container-fluid border-bottom d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-lg-4 text-center py-2">
-                <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Our Office</h6>
-                        <span>123 Street, New York, USA</span>
-                    </div>
+ <!-- Topbar Start -->
+ <div class="container-fluid border-bottom d-none d-lg-block">
+    <div class="row gx-0">
+        <div class="col-lg-4 text-center py-2">
+            <div class="d-inline-flex align-items-center">
+                <i class="bi bi-geo-alt fs-1 text-primary me-3"></i>
+                <div class="text-start">
+                    <h6 class="text-uppercase mb-1">Our Office</h6>
+                    <span>Casa Nova, Ariana </span>
                 </div>
             </div>
-            <div class="col-lg-4 text-center border-start border-end py-2">
-                <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Email Us</h6>
-                        <span>info@example.com</span>
-                    </div>
+        </div>
+        <div class="col-lg-4 text-center border-start border-end py-2">
+            <div class="d-inline-flex align-items-center">
+                <i class="bi bi-envelope-open fs-1 text-primary me-3"></i>
+                <div class="text-start">
+                    <h6 class="text-uppercase mb-1">Email Us</h6>
+                    <span>rescuethestray@gmail.com</span>
                 </div>
             </div>
-            <div class="col-lg-4 text-center py-2">
-                <div class="d-inline-flex align-items-center">
-                    <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
-                    <div class="text-start">
-                        <h6 class="text-uppercase mb-1">Call Us</h6>
-                        <span>+012 345 6789</span>
-                    </div>
+        </div>
+        <div class="col-lg-4 text-center py-2">
+            <div class="d-inline-flex align-items-center">
+                <i class="bi bi-phone-vibrate fs-1 text-primary me-3"></i>
+                <div class="text-start">
+                    <h6 class="text-uppercase mb-1">Call Us</h6>
+                    <span>+216 29 663 903</span>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Topbar End -->
+</div>
+<!-- Topbar End -->
+
 
 
     <!-- Navbar Start -->
@@ -92,9 +93,6 @@
                             <img class="img-fluid h-100" src="{{lr.url_learningr}}"   style="object-fit: cover; margin-top: 20px;">
                             <img class="img-fluid h-100"  src="../assets/img/blog-1.jpg"  style="object-fit: cover; margin-top: -20px;">
 
-                           <!-- <video controls>
-                                <source [src]="lr.url_learningr" >
-                              </video>  -->
                         </div>
                         <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center" style="margin-top: -50px;">
                             <div class="p-4">
@@ -104,7 +102,7 @@
                                 </div>
                                 <h5 class="text-uppercase mb-3">{{lr.title_learningr}}</h5>
                                 <p>{{lr.desc_learningr}}</p>
-                                <a class="text-primary text-uppercase" (click)="gotoLR()" >Read More<i class="bi bi-chevron-right"></i></a>
+                                <a class="text-primary text-uppercase" (click)="gotoLR(lr)" >Read More<i class="bi bi-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -116,7 +114,7 @@
             <!-- Blog list End -->
 
             <!-- Sidebar Start -->
-            <div class="col-lg-4" style="margin-top: -800px;">
+            <div class="col-lg-4" style="margin-top: -1600px;">
                 <!-- Search Form Start -->
                 <div class="mb-5">
                     <div class="input-group">
@@ -126,15 +124,17 @@
                 </div>
                 <!-- Search Form End -->
 
-                <!-- Category Start -->
+                                
+                <!-- Theme Start -->
                 <div class="mb-5" >
-                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4" >Categories</h3>
-                    <div class="d-flex flex-column justify-content-start" *ngFor="let lr of lrsList">
-                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>{{lr.type_learningr}}</a>
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4" >Themes</h3>
+                    <div class="d-flex flex-column justify-content-start"  *ngFor="let lr of lrsList">
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>{{lr.theme}}</a>
                       
                     </div>
                 </div>
-                <!-- Category End -->
+                <!-- Theme End -->
+
 
                 <!-- Recent Post Start -->
                 <div class="mb-5"   >
@@ -148,16 +148,7 @@
                 </div>
                 <!-- Recent Post End -->
 
-                
-                <!-- Theme Start -->
-                <div class="mb-5" >
-                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4" >Themes</h3>
-                    <div class="d-flex flex-column justify-content-start"  *ngFor="let lr of lrsList">
-                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>{{lr.theme}}</a>
-                      
-                    </div>
-                </div>
-                <!-- Theme End -->
+
 
 
                 <!-- Image Start -->
@@ -165,6 +156,17 @@
                     <img src="../assets/img/blog-1.jpg" alt="" class="img-fluid rounded">
                 </div>
                 <!-- Image End -->
+
+                
+                <!-- Category Start -->
+                <div class="mb-5" >
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4" >Categories</h3>
+                    <div class="d-flex flex-column justify-content-start" *ngFor="let lr of lrsList">
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>{{lr.type_learningr}}</a>
+                      
+                    </div>
+                </div>
+                <!-- Category End --> 
 
                 <!-- Tags Start -->
                 <div class="mb-5">
@@ -190,7 +192,7 @@
                 <div>
                     <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Plain Text</h3>
                     <div class="bg-light text-center" style="padding: 30px;">
-                        <p>Vero sea et accusam justo dolor accusam lorem consetetur, dolores sit amet sit dolor clita kasd justo, diam accusam no sea ut tempor magna takimata, amet sit et diam dolor ipsum amet diam</p>
+                        <p>Pet friendly resources available.</p>
                         <a href="" class="btn btn-primary py-2 px-4">Read More</a>
                     </div>
                 </div>
@@ -208,10 +210,9 @@
             <div class="row g-5">
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Get In Touch</h5>
-                    <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor</p>
-                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>123 Street, New York, USA</p>
-                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>info@example.com</p>
-                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+012 345 67890</p>
+                    <p class="mb-2"><i class="bi bi-geo-alt text-primary me-2"></i>Casa Nova, Ariana </p>
+                    <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>rescuethestray@gmail.com</p>
+                    <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+216 29 663 903</p>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Quick Links</h5>
@@ -271,10 +272,10 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-md-6 text-center text-md-start">
-                    <p class="mb-md-0">&copy; <a class="text-white" href="#">Your Site Name</a>. All Rights Reserved.</p>
+                    <p class="mb-md-0">&copy; <a class="text-white" href="#">Rescue The Stray</a>. All Rights Reserved.</p>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
-                    <p class="mb-0">Designed by <a class="text-white" href="https://htmlcodex.com">HTML Codex</a></p>
+                    <p class="mb-0">Made by <a class="text-white" href="https://htmlcodex.com">Vortex ☁️</a></p>
                 </div>
             </div>
         </div>

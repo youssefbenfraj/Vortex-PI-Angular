@@ -17,7 +17,7 @@ const routes: Routes = [
     component: HomePageComponent,
   },
   {
-    path:'learning-resource',
+    path:'learning-resource/:id',
     component: LearningResourceComponent,
   },
   {

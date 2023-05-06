@@ -18,6 +18,9 @@ import { ChatbotAiComponent } from './components/chatbot-ai/chatbot-ai.component
 import { NbChatModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NotificationLRComponent } from './components/notification-lr/notification-lr.component';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 Chart.register(...registerables);
@@ -30,6 +33,7 @@ Chart.register(...registerables);
     AdminLearningResourceComponent,
     AllLearningResourcesComponent,
     ChatbotAiComponent,
+    NotificationLRComponent
     
   ],
 
@@ -43,6 +47,7 @@ Chart.register(...registerables);
     NbThemeModule.forRoot({ name: 'dark' }),
     NbLayoutModule,
     NbChatModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
