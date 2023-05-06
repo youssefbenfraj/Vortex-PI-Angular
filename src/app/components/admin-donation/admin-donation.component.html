@@ -1,0 +1,93 @@
+
+
+
+
+<!-- Side bar-->
+<div class="sidebar">
+    <div class="admin-profile">
+     
+      <img src="../assets/img/user.jpg" alt="Admin Profile Picture" class="admin-pic">
+      <h2 class="admin-name">Administrator</h2>
+      <div class="online-status">
+        <div class="dot"></div>
+        <span class="online-text">Online</span>
+      </div>
+    </div>
+    <div class="sidebar-menu">
+      <ul>
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="#">Learning Resources</a></li>
+        <li><a href="admin-crowd-funding">Campaigns</a></li>
+        <li><a href="admin-donation">Donations</a></li>
+        <li><a href="#">Pet Shop</a></li>
+        <li><a href="#">Pet Adoption</a></li>
+        <li><a href="#">Social Network</a></li>
+      </ul>
+    </div>
+  </div>
+  
+  <!-- NavBar -->
+  <nav class="navbari">
+    <div class="navbari-toggler">
+      <img class="navbari-icon" src="../assets/img/team-1.jpg">
+    </div>
+   
+   
+    <div class="navbari-right">
+      <div class="notification-icon">
+        
+      </div>
+      <div class="logout-icon">
+        <i class="fa fa-power-off"></i>
+      </div>
+    </div>
+   
+  </nav>
+
+  <!-- Add-->
+  <section class="donations">
+  <section class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+    </div>
+    </section>
+    
+     <!-- GET ALL DONATIONS-->
+     <table class="get-all">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Amount Donation</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date Donation </th>
+          <th scope="col" >Compaign Donated to</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let donation of donationList">
+          <th scope="row">{{donation.id_donation}}</th>
+          <td>{{donation.amount_donation}} $</td>
+          <td>{{donation.desc_donation}}</td>
+          <td>{{donation.date_donation}}</td>
+          <td>{{donation.compaign.title_compaign}}</td>
+          <td>
+            <button type="button" (click)="deleteDonation(donation)" class="btn btn-outline-danger">Delete</button>
+          </td> 
+        </tr>
+    
+      </tbody>
+    </table>
+  
+  </section>
+  
+  <section class="chart-section">
+    <h2 class="chart-section__title">Donations per Campaign</h2>
+    <div class="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
+  </section>
+  
+  
+  
+  
+  
