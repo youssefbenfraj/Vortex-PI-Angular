@@ -147,7 +147,7 @@ export class AdminLearningResourceComponent implements OnInit {
       this.lrservice.addLR(this.lrObj).subscribe(res=>{
         console.log(res);
         this.getAllLR();
-        alert("Learning resource was added successfully!");
+       // alert("Learning resource was added successfully!");
       },err=>{
         console.log(err);
         alert("Error!");
@@ -178,7 +178,7 @@ export class AdminLearningResourceComponent implements OnInit {
        // this.closeModalEdit();
         this.getAllLR();
         
-        alert("LR successfully edited");
+       // alert("LR successfully edited");
       }, err =>{
         console.log(err);
         alert("Sorry lr wasn't edited");

@@ -5,6 +5,7 @@ import { LearningResourceComponent } from './components/learning-resource/learni
 import { AdminLearningResourceComponent } from './components/admin-learning-resource/admin-learning-resource.component';
 import { AllLearningResourcesComponent } from './components/all-learning-resources/all-learning-resources.component';
 import { ChatbotAiComponent } from './components/chatbot-ai/chatbot-ai.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 const routes: Routes = [
 
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path:'pet-bot',
     component: ChatbotAiComponent
+  },
+  {
+    path:'contact-us',
+    component: ContactUsComponent
   }
 
 ];

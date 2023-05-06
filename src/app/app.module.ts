@@ -20,6 +20,9 @@ import { NbChatModule, NbLayoutModule, NbThemeModule } from '@nebular/theme';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NotificationLRComponent } from './components/notification-lr/notification-lr.component';
 import { ToastrModule } from 'ngx-toastr';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 
@@ -33,7 +36,10 @@ Chart.register(...registerables);
     AdminLearningResourceComponent,
     AllLearningResourcesComponent,
     ChatbotAiComponent,
-    NotificationLRComponent
+    NotificationLRComponent,
+    NavBarComponent,
+    FooterComponent,
+    ContactUsComponent
     
   ],
 
