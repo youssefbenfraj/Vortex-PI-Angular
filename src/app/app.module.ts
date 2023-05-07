@@ -28,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AdminNavBarComponent } from './components/admin-nav-bar/admin-nav-bar.component';
 
 
 
@@ -50,7 +51,8 @@ Chart.register(...registerables);
     NotificationLRComponent,
     NavBarComponent,
     FooterComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AdminNavBarComponent
 
   ],
 
