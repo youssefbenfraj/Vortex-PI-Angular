@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
-import { error } from 'console';
-import { Compaign } from 'src/app/entities/compaign';
 import { Donation } from 'src/app/entities/donation';
 import { DonationService } from 'src/app/services/donation.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import Stripe from 'stripe';
 
-
+const stripe = new Stripe('sk_test_51N4n58AjfqKKz6LinZzXhqChiVzYTJ69aB0PXgmOK5j6iwF9tSBrsbcmNeNa6hQISgzeuDV7b7p8OOLFWgJXVuAJ00sI80sDAM',{
+  apiVersion: '2022-11-15',
+});
 declare var window: any;
 
 @Component({
@@ -22,6 +23,9 @@ export class DonationComponent implements OnInit{
   donationObj : Donation = new Donation();
   donationList : Donation[] = [];
   id !: number ;
+  formModalPayment : any;
+  
+
 
   constructor(
     private route: ActivatedRoute,
@@ -33,6 +37,7 @@ export class DonationComponent implements OnInit{
     this.route.params.subscribe(params => {
        this.id = params['idcomp'];
     });
+    
 
     this.donationService.getAllDonations();
 
@@ -42,6 +47,11 @@ export class DonationComponent implements OnInit{
       desc_donation:[''],
       amount_donation:['']
     });
+
+    this.formModalPayment= new window.bootstrap.Modal(
+      document.getElementById('Payment')
+      );
+    
 
   }
    addDonationAssign() {
@@ -54,6 +64,10 @@ export class DonationComponent implements OnInit{
         alert("Donation Added succefully");
         window.location.href="crowd-funding";
       });
+    }
+
+    openModalPayment() {
+      this.formModalPayment.show();
     }
 }
 
