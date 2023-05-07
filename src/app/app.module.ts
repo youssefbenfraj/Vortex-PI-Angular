@@ -16,10 +16,6 @@ import { AdvertisementDirective } from './components/advertisement.directive';
 import { LearningResourceComponent } from './components/learning-resource/learning-resource.component';
 import { AdminLearningResourceComponent } from './components/admin-learning-resource/admin-learning-resource.component';
 
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
 import { Chart } from 'chart.js';
 import { registerables } from 'chart.js';
 import { AllLearningResourcesComponent } from './components/all-learning-resources/all-learning-resources.component';
@@ -32,6 +28,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AdminNavBarComponent } from './components/admin-nav-bar/admin-nav-bar.component';
 
 
 
@@ -54,7 +51,8 @@ Chart.register(...registerables);
     NotificationLRComponent,
     NavBarComponent,
     FooterComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    AdminNavBarComponent
 
   ],
 
