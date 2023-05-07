@@ -29,6 +29,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { AdminNavBarComponent } from './components/admin-nav-bar/admin-nav-bar.component';
+import { AdminAdoptionCenterComponent } from './components/admin-adoption-center/admin-adoption-center.component';
 
 
 
@@ -52,7 +53,8 @@ Chart.register(...registerables);
     NavBarComponent,
     FooterComponent,
     ContactUsComponent,
-    AdminNavBarComponent
+    AdminNavBarComponent,
+    AdminAdoptionCenterComponent
 
   ],
 

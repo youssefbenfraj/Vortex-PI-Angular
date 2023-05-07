@@ -12,6 +12,7 @@ import { CrowdFundingComponent } from './components/crowd-funding/crowd-funding.
 import { DonationComponent } from './components/donation/donation.component';
 import { AdminCrowdFundingComponent } from './components/admin-crowd-funding/admin-crowd-funding.component';
 import { AdminDonationComponent } from './components/admin-donation/admin-donation.component';
+import { AdminAdoptionCenterComponent } from './components/admin-adoption-center/admin-adoption-center.component';
 
 const routes: Routes = [
   {
@@ -38,7 +39,11 @@ const routes: Routes = [
     path: 'admin-donation',
     component: AdminDonationComponent
     },
-      {
+    {
+      path: 'admin-adoption-center',
+      component: AdminAdoptionCenterComponent
+      },
+ {
     path:'learning-resource/:id',
     component: LearningResourceComponent,
   },
