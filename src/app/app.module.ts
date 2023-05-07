@@ -16,10 +16,6 @@ import { AdvertisementDirective } from './components/advertisement.directive';
 import { LearningResourceComponent } from './components/learning-resource/learning-resource.component';
 import { AdminLearningResourceComponent } from './components/admin-learning-resource/admin-learning-resource.component';
 
-
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
 import { Chart } from 'chart.js';
 import { registerables } from 'chart.js';
 import { AllLearningResourcesComponent } from './components/all-learning-resources/all-learning-resources.component';

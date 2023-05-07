@@ -26,4 +26,9 @@ export class NavBarComponent implements OnInit {
   gotoContact(){
     this.router.navigate(['/contact-us']);
   }
+
+  gotoCrowdFunding(){
+    this.router.navigate(['/crowd-funding']);
+  }
+  
 }
