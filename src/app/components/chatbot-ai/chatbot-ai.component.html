@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Rescue The Stray</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+
+</head>
+
+<body>
+
+        <!-- Nav Bar -->
+
+        <app-nav-bar></app-nav-bar>
+
+        <!-- End Nav Bar -->
+
+
+    <!-- CHAT Start -->
+
+    <!-- <nb-chat  title="Petbot" size="large">
+        <nb-chat-message  *ngFor="let msg of messages"
+                         [type]="msg.type"
+                         [reply]="msg.reply"
+                         [message]="msg.text"
+                         [sender]="msg.user.name"
+                         [date]="msg.date"
+                         [avatar]="msg.user.avatar">
+        </nb-chat-message>
+        <nb-chat-form  (send)="sendMessage($event)">
+        </nb-chat-form>
+    </nb-chat> -->
+
+    <div class="chatbot">
+        
+        <div class="chat-messages">
+          <div class="chat-message" *ngFor="let msg of messages">
+            <div class="message-header">
+              <img class="avatar" src="{{ msg.user.avatar }}" alt="{{ msg.user.name }}">
+              <h3 class="sender">{{ msg.user.name }}</h3>
+              <p class="date">{{ msg.date }}</p>
+            </div>
+            <div class="message-content" [class.reply]="msg.reply" [class.question]="msg.type === 'question'">
+              <p>{{ msg.text }}</p>
+            </div>
+          </div>
+        </div>
+        <form class="chat-form" (submit)="sendMessage($event)">
+          <input type="text" placeholder="Type your message here" name="message">
+          <button type="submit">Send</button>
+        </form>
+      </div>
+      
+
+
+    
+      
+
+    <!-- CHAT End -->
+
+
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FOOTER -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+</body>
+
+</html>

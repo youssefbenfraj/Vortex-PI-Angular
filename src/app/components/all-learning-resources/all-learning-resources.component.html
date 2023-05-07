@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Learning Resources</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="../assets/img/favicon.ico" rel="icon">
+
+</head>
+
+<body>
+
+    <!-- Nav Bar -->
+
+    <app-nav-bar></app-nav-bar>
+
+    <!-- End Nav Bar -->
+
+
+    <!-- Blog Start -->
+    <div class="container py-5" style="margin-top: -10px;">
+        <div class="row g-5">
+            <!-- Blog list Start -->
+            <div class="col-lg-8" *ngFor="let lr of lrsList">
+                <div class="blog-item mb-5">
+                    <div class="row g-0 bg-light overflow-hidden" >
+                        <div class="col-12 col-sm-5 h-100">
+                            <img class="img-fluid h-100" src="{{lr.url_learningr}}"   style="object-fit: cover; margin-top: 20px;">
+                            <img class="img-fluid h-100"  src="../assets/img/blog-1.jpg"  style="object-fit: cover; margin-top: -20px;">
+
+                        </div>
+                        <div class="col-12 col-sm-7 h-100 d-flex flex-column justify-content-center" style="margin-top: -50px;">
+                            <div class="p-4">
+                                <div class="d-flex mb-3">
+                                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>{{lr.type_learningr}}</small>
+                                    <small><i class="bi bi-calendar-date me-2"></i>{{lr.creationdate_learningr}}</small>
+                                </div>
+                                <h5 class="text-uppercase mb-3">{{lr.title_learningr}}</h5>
+                                <p>{{lr.desc_learningr}}</p>
+                                <a class="text-primary text-uppercase" (click)="gotoLR(lr)" >Read More<i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              
+            </div>
+
+               
+            <!-- Blog list End -->
+
+            <!-- Sidebar Start -->
+            <div class="col-lg-4" style="margin-top: -1600px;">
+                <!-- Search Form Start -->
+                <div class="mb-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control p-3" placeholder="Keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+                <!-- Search Form End -->
+
+                                
+                <!-- Theme Start -->
+                <div class="mb-5" >
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4" >Themes</h3>
+                    <div class="d-flex flex-column justify-content-start"  *ngFor="let lr of lrsList">
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>{{lr.theme}}</a>
+                      
+                    </div>
+                </div>
+                <!-- Theme End -->
+
+
+                <!-- Recent Post Start -->
+                <div class="mb-5"   >
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Recent Post</h3>
+                    <div class="d-flex overflow-hidden mb-3" *ngFor="let lr of lrsList">
+                        <img class="img-fluid" src="{{lr.url_learningr}}"  style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                        <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0">{{lr.title_learningr}}
+                        </a>
+                    </div>
+                   
+                </div>
+                <!-- Recent Post End -->
+
+
+
+
+                <!-- Image Start -->
+                <div class="mb-5">
+                    <img src="../assets/img/blog-1.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <!-- Image End -->
+
+                
+                <!-- Category Start -->
+                <div class="mb-5" >
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4" >Categories</h3>
+                    <div class="d-flex flex-column justify-content-start" *ngFor="let lr of lrsList">
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>{{lr.type_learningr}}</a>
+                      
+                    </div>
+                </div>
+                <!-- Category End --> 
+
+                <!-- Tags Start -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Tag Cloud</h3>
+                    <div class="d-flex flex-wrap m-n1">
+                        <a href="" class="btn btn-primary m-1">Design</a>
+                        <a href="" class="btn btn-primary m-1">Development</a>
+                        <a href="" class="btn btn-primary m-1">Marketing</a>
+                        <a href="" class="btn btn-primary m-1">SEO</a>
+                        <a href="" class="btn btn-primary m-1">Writing</a>
+                        <a href="" class="btn btn-primary m-1">Consulting</a>
+                        <a href="" class="btn btn-primary m-1">Design</a>
+                        <a href="" class="btn btn-primary m-1">Development</a>
+                        <a href="" class="btn btn-primary m-1">Marketing</a>
+                        <a href="" class="btn btn-primary m-1">SEO</a>
+                        <a href="" class="btn btn-primary m-1">Writing</a>
+                        <a href="" class="btn btn-primary m-1">Consulting</a>
+                    </div>
+                </div>
+                <!-- Tags End -->
+
+                <!-- Plain Text Start -->
+                <div>
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Plain Text</h3>
+                    <div class="bg-light text-center" style="padding: 30px;">
+                        <p>Pet friendly resources available.</p>
+                        <a href="" class="btn btn-primary py-2 px-4">Read More</a>
+                    </div>
+                </div>
+                <!-- Plain Text End -->
+            </div>
+            <!-- Sidebar End -->
+        </div>
+    </div>
+    <!-- Blog End -->
+
+
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FOOTER -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+  
+</body>
+
+</html>

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home-page',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.css']
+  selector: 'app-nav-bar',
+  templateUrl: './nav-bar.component.html',
+  styleUrls: ['./nav-bar.component.css']
 })
-export class HomePageComponent implements OnInit {
+export class NavBarComponent implements OnInit {
 
   constructor(
     private router: Router
@@ -21,5 +21,9 @@ export class HomePageComponent implements OnInit {
 
   gotoLRs(){
     this.router.navigate(['/all-learning-resources']);
+  }
+
+  gotoContact(){
+    this.router.navigate(['/contact-us']);
   }
 }
