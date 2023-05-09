@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { AdoptionPost } from 'src/app/entities/adoption-post';
-import { AdoptionPostService } from 'src/app/_services/adoption-post.service';
+import { AdoptionPostService } from 'src/app/services/adoption-post.service';
 import { AnimalProfile } from 'src/app/entities/animal-profile';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AnimalProfileService } from 'src/app/_services/animal-profile.service';
+import { AnimalProfileService } from 'src/app/services/animal-profile.service';
 
 declare var window: any;
 

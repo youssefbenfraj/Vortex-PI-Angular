@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdoptionPost } from 'src/app/entities/adoption-post';
-import { AdoptionPostService } from 'src/app/_services/adoption-post.service';
+import { AnimalProfile } from 'src/app/entities/animal-profile';
+import { AdoptionPostService } from 'src/app/services/adoption-post.service';
 
 declare var window: any;
 
@@ -13,6 +14,9 @@ declare var window: any;
 export class AdoptionCenterComponent implements OnInit {
 
   adpList : AdoptionPost[] = [];
+  ModalShow:any
+  adpobj: AdoptionPost= new AdoptionPost;
+  apobj:AnimalProfile= new AnimalProfile;
   
   constructor(
     private router: Router,
@@ -24,6 +28,10 @@ export class AdoptionCenterComponent implements OnInit {
   ngOnInit(): void {
 
     this.getAllADP();
+
+    this.ModalShow=new  window.bootstrap.Modal(
+      document.getElementById('showw')
+    );
   }
   getAllADP()
     { 
@@ -42,5 +50,9 @@ export class AdoptionCenterComponent implements OnInit {
   navigator(id_post:number){
     this.router.navigate(['checkapplication',id_post])
   }
-
+  openModalShow(adp:AdoptionPost,ap:AnimalProfile) {
+    this.ModalShow.show();
+    this.adpobj=adp;
+    this.apobj=ap;
+  }
 }

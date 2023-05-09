@@ -77,8 +77,94 @@
         </div>
     </nav>
     <!-- Navbar End -->
+    <!--modalshow-->
+    <div class="modal fade" id="showw"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Animal details</h5>
+              <a class="close" href="animalprofile">&times;</a>
+            </div>
+            <div class="modal-body">
+              <div class="container p-0">
 
-
+                <!---->
+                
+                  <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Animal details</h3>
+                  
+                      <div class="row g-3" >
+                          
+                        <div class="col-12 col-sm-7">
+                          <label for="type" class="label">ID</label>
+                          <p>{{this.appObj.id_animal}}</p>
+                        </div>
+                        <div class="col-12 col-sm-7">
+                          <label for="type" class="label">Name</label>
+                          <p>{{this.appObj.name_animal}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">Type</label>
+                          <p>{{this.appObj.type_animal}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">Breed</label>
+                          <p>{{this.appObj.breed_animal}}</p>
+                        </div>
+                        <div class="col-12">
+                          <label for="gender" class="label" style="margin-right: 2cm;">Gender</label>
+                          <p>{{this.appObj.gender_animal}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">Age</label>
+                          <p>{{this.appObj.age_animal}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="size" class="label">Size</label>
+                          <p>{{this.appObj.size_animal}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">Weight</label>
+                          <p>{{this.appObj.weight_animal}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">Color</label>
+                          <p>{{this.appObj.color_animal}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">Temperament</label>
+                          <p>{{this.appObj.temperament_animal}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">is Vaccinated?</label>
+                          <p>{{this.appObj.isVaccinated}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">is Trained?</label>
+                          <p>{{this.appObj.isTrained}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">Medical Needs</label>
+                          <p>{{this.appObj.medicalNeeds_description}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">Behavioral Needs</label>
+                          <p>{{this.appObj.behavioralNeeds_description}}</p>
+                        </div>
+                        <div class="col-7">
+                          <label for="type" class="label">History</label>
+                          <p>{{this.appObj.history_animal}}</p>
+                        </div>
+                        
+                      </div>
+                  
+              
+                <!---->
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>
+    <!--modalshowend-->
     <!-- Blog Start -->
     <div class="container py-5">
         <div class="row g-5">
@@ -209,37 +295,7 @@
                 <!-- Comment Form End -->
                 
 
-              <!---->
-              <div class="modal fade" id="ShowAP"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Animal Profile</h5>
-                   
-                    </div>
-                    <div class="modal-body" >
-                      <div  *ngFor="let ap of apList ">
-                        <div *ngIf="ap.id_animal === 5">
-                        <div class="row no-gutters">
-                          <div class="col-md-4">
-                            <img  [src]="ap.photoUrl_animal" style="width: 200px; height: 200px; object-fit: cover;" alt="Card image cap">
-                          </div>
-                          <div class="col-md-8" >
-                            <div style="margin-left: 10px;">
-                              <p ><strong> {{ ap.name_animal }}</strong></p>
-                              <p >  {{ ap.type_animal }}</p>
-                              <p >Breed:   {{ ap.breed_animal }}</p>
-                              
-                            </div>
-                          </div>
-                        </div>
-                        
-                      </div>
-                      </div>
-                    </div>
-                </div>
-                </div>
-              </div>
+              
             
                 
             </div>
@@ -268,7 +324,7 @@
                           <p class="card-text">Type:     {{ ap.type_animal }}</p>
                           <p class="card-text">Breed:   {{ ap.breed_animal }}</p>
                           <div class="btn-group" >
-                            <a   class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Show</a>
+                            <a  (click)="openModalShow(ap)" class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Show</a>
                             <a  (click)="editAp(ap)" (click)="toggle()" (click)="toggle2()" class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Update</a>
                             <a  (click)="deleteAP(ap)" class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Delete</a>
                           </div>
@@ -282,31 +338,11 @@
                 
                   
                 
-                <!--div class="row">
-                    <div class="col-md-12">
-                      <h2>Animal Profiles</h2>
-                      <hr>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <div class="card-deck">
-                        <div class="card" *ngFor="let ap of apList">
-                          <img class="card-img-top" [src]="ap.photoUrl_animal" alt="Animal Profile Photo">
-                          <div class="card-body">
-                            <h5 class="card-title">{{ ap.name_animal }}</h5>
-                            <p class="card-text">{{ ap.type_animal }}</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div-->
-                  
-                <!--show Animal Profiles -->
+              
 
                 <!-- Image Start -->
                 <div class="mb-5">
-                    <img src="img/blog-1.jpg" alt="" class="img-fluid rounded">
+                    <img src="../assets/img/blog-1.jpg" alt="" class="img-fluid rounded">
                 </div>
                 <!-- Image End -->
             </div>

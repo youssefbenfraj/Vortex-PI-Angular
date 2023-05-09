@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AnimalProfile } from 'src/app/entities/animal-profile';
-import { AnimalProfileService } from 'src/app/_services/animal-profile.service';
+import { AnimalProfileService } from 'src/app/services/animal-profile.service';
 import { AdoptionPost } from 'src/app/entities/adoption-post';
-import { AdoptionPostService } from 'src/app/_services/adoption-post.service';
+import { AdoptionPostService } from 'src/app/services/adoption-post.service';
 
 declare var window: any;
 
@@ -15,10 +15,11 @@ declare var window: any;
 })
 export class AdoptionPostComponent implements OnInit {
 
-  
+  ModalShow:any
   num : number = 12;
   adpList : AdoptionPost[] = [];
   apList: AnimalProfile[] = [];
+  adpobj: AdoptionPost= new AdoptionPost;
 
   constructor(
     private router: Router,
@@ -32,7 +33,9 @@ export class AdoptionPostComponent implements OnInit {
 
     this.getAllADP();
 
-   
+    this.ModalShow=new  window.bootstrap.Modal(
+      document.getElementById('showw')
+    );
   }
 
   // addADP() {
@@ -90,6 +93,16 @@ export class AdoptionPostComponent implements OnInit {
   select(id_anim:number){
     this.router.navigate(['addadoptionpost',id_anim]);
   }
+  deleteADP(adp: AdoptionPost){
+    this.adpservice.deleteADP(adp).subscribe(res=>{
+      console.log(res);
+     alert("Adoption Post was deleted succesfully");
+      this.getAllADP();
+    }, err =>{
+      console.log(err);
+      alert("Sorry unable to delete Adoption Post");
+    })
+  }
   // cancel(){
     
   //   const formSection = document.getElementById('adoption-post-form');
@@ -101,7 +114,10 @@ export class AdoptionPostComponent implements OnInit {
   //     formSection.style.display = formSection.style.display === 'none' ? 'block' : 'none';
   //   }
   // }
-
+  openModalShow(adp:AdoptionPost) {
+    this.ModalShow.show();
+    this.adpobj=adp;
+  }
 }
 
 

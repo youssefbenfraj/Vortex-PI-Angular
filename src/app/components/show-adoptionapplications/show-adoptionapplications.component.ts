@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder,FormGroup } from '@angular/forms';
 import { AdoptionApplication } from 'src/app/entities/adoption-application';
-import { AdoptionApplicationService } from 'src/app/_services/adoption-application.service';
+import { AdoptionApplicationService } from 'src/app/services/adoption-application.service';
 import { ActivatedRoute, Router } from '@angular/router'
 
 declare var window: any;
@@ -19,6 +19,8 @@ export class ShowAdoptionapplicationsComponent implements OnInit {
     private router: Router,
     private aapservice :AdoptionApplicationService) 
    { }
+    ModalShow:any;
+    appObj : AdoptionApplication = new AdoptionApplication();
     aapDetail !: FormGroup;
     aapObj : AdoptionApplication = new AdoptionApplication();
     aapList : AdoptionApplication[] = [];
@@ -66,6 +68,9 @@ export class ShowAdoptionapplicationsComponent implements OnInit {
       
   
     });
+    this.ModalShow=new  window.bootstrap.Modal(
+      document.getElementById('showw')
+    );
   }
 
   getAllAAP()
@@ -210,4 +215,9 @@ switching(){
   }
 }
 }
+openModalShow(app:AdoptionApplication) {
+  this.ModalShow.show();
+  this.appObj=app;
+}
+
 }

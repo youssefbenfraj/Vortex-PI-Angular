@@ -97,7 +97,103 @@
     </nav>
     <!-- Navbar End -->
 
-
+    <!--modalshow-->
+    <div class="modal fade" id="showw"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Post details</h5>
+                <a class="close" href="adoptioncenter">&times;</a>
+              </div>
+              <div class="modal-body">
+                <div class="container p-0">
+  
+                  <!---->
+                  
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Post details</h3>
+                    
+                        <div class="row g-3" >
+                            
+                          
+                          <div class="col-12 col-sm-7">
+                            <label for="type" class="label">Name</label>
+                            <p>{{this.apobj.name_animal}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Type</label>
+                            <p>{{this.apobj.type_animal}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Breed</label>
+                            <p>{{this.apobj.breed_animal}}</p>
+                          </div>
+                          <div class="col-12">
+                            <label for="gender" class="label" style="margin-right: 2cm;">Gender</label>
+                            <p>{{this.apobj.gender_animal}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Age</label>
+                            <p>{{this.apobj.age_animal}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="size" class="label">Size</label>
+                            <p>{{this.apobj.size_animal}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Weight</label>
+                            <p>{{this.apobj.weight_animal}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Color</label>
+                            <p>{{this.apobj.color_animal}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Temperament</label>
+                            <p>{{this.apobj.temperament_animal}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">is Vaccinated?</label>
+                            <p>{{this.apobj.isVaccinated}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">is Trained?</label>
+                            <p>{{this.apobj.isTrained}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Medical Needs</label>
+                            <p>{{this.apobj.medicalNeeds_description}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Behavioral Needs</label>
+                            <p>{{this.apobj.behavioralNeeds_description}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">History</label>
+                            <p>{{this.apobj.history_animal}}</p> 
+                          </div> 
+                          <div class="col-7">
+                            <label for="type" class="label">Description</label>
+                            <p>{{this.adpobj.description_adoptionpost}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Status</label>
+                            <p>{{this.adpobj.status_adoptionpost}}</p>
+                          </div>
+                          <div class="col-12">
+                            <label for="gender" class="label" style="margin-right: 2cm;">Creation Date</label>
+                            <p>{{this.adpobj.creationdate_adoptionpost}}</p>
+                          </div>
+                          
+                        </div>
+                    
+                
+                  <!---->
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+      <!--modalshowend-->
     <!-- Blog Start -->
     <div class="container py-5">
         <div class="row g-5">
@@ -117,7 +213,7 @@
                                 <h5 class="text-uppercase mb-3">Name:  {{ adp.animalProfile.name_animal }}</h5>
                                 <p>Description:   {{ adp.description_adoptionpost }}</p>
                                 <div>
-                                <a class="text-primary text-uppercase" href="">Read More<i class="bi bi-chevron-right"></i></a>
+                                <a (click)="openModalShow(adp,adp.animalProfile)" class="text-primary text-uppercase" >Read More<i class="bi bi-chevron-right"></i></a>
                                 </div>
                                 <br>
                                 <div>

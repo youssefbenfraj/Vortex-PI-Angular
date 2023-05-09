@@ -95,7 +95,105 @@
         </div>
     </nav>
     <!-- Navbar End -->
-
+    <!--modalshow-->
+    <div class="modal fade" id="showw"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Application details</h5>
+                <a class="close" href="showapplications">&times;</a>
+              </div>
+              <div class="modal-body">
+                <div class="container p-0">
+  
+                  <!---->
+                  
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Application details</h3>
+                    
+                        <div class="row g-3" >
+                            
+                          <div class="col-12 col-sm-7">
+                            <label for="type" class="label">ID</label>
+                            <p>{{this.appObj.id_adoptionapp}}</p>
+                          </div>
+                          <div class="col-12 col-sm-7">
+                            <label for="type" class="label">Name</label>
+                            <p>{{this.appObj.applicantName}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Email</label>
+                            <p>{{this.appObj.applicantEmail}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Phone Number</label>
+                            <p>{{this.appObj.applicantPhone}}</p>
+                          </div>
+                          <div class="col-12">
+                            <label for="gender" class="label" style="margin-right: 2cm;">Address</label>
+                            <p>{{this.appObj.applicantAddress}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Occupation</label>
+                            <p>{{this.appObj.applicantOccupation}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="size" class="label">Housing Type</label>
+                            <p>{{this.appObj.applicantHousingType}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Household Size</label>
+                            <p>{{this.appObj.applicantHouseholdSize}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Experience</label>
+                            <p>{{this.appObj.applicantExperience}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Other Pets</label>
+                            <p>{{this.appObj.otherPetsDescription}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Vet Name</label>
+                            <p>{{this.appObj.vetName}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Vet Phone</label>
+                            <p>{{this.appObj.vetPhone}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">ReferenceName</label>
+                            <p>{{this.appObj.referenceName}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label"> ReferencePhone </label>
+                            <p>{{this.appObj. referencePhone}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">ReferenceRelationship</label>
+                            <p>{{this.appObj.referenceRelationship}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Motive</label>
+                            <p>{{this.appObj.motive}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Status</label>
+                            <p>{{this.appObj.status_adoptionapp}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Creation Date</label>
+                            <p>{{this.appObj.createdDate_adoptionapp}}</p>
+                          </div>
+                        </div>
+                    
+                
+                  <!---->
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+      <!--modalshowend-->
 
     <!-- Blog Start -->
     <div class="container py-5">
@@ -234,7 +332,7 @@
                                 <h5 class="text-uppercase mb-3">Application FOR: {{ aap.adoptionPost.animalProfile.name_animal }} THE {{ aap.adoptionPost.animalProfile.type_animal }}</h5>
                                 <h5 class="text-uppercase mb-3">STATUS:   {{ aap.status_adoptionapp }}</h5>
                                 <div class="btn-group" >
-                                    <a   class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Show</a>
+                                    <a  (click)="openModalShow(aap)" class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Show</a>
                                     <a  (click)="editAAP(aap)" (click)="switching()"   class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Update</a>
                                     <a  (click)="deleteAAP(aap)"  class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Delete</a>
                                 </div>

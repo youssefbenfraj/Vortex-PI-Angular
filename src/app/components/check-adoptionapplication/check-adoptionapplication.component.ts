@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AdoptionApplication } from 'src/app/entities/adoption-application';
-import { AdoptionApplicationService } from 'src/app/_services/adoption-application.service';
+import { AdoptionApplicationService } from 'src/app/services/adoption-application.service';
 import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({

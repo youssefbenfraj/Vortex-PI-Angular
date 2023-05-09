@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { AdoptionPost } from 'src/app/entities/adoption-post';
 import { AdoptionApplication } from 'src/app/entities/adoption-application';
-import { AdoptionApplicationService } from 'src/app/_services/adoption-application.service';
-import { AdoptionPostService } from 'src/app/_services/adoption-post.service';
+import { AdoptionApplicationService } from 'src/app/services/adoption-application.service';
+import { AdoptionPostService } from 'src/app/services/adoption-post.service';
 import { AnimalProfile } from 'src/app/entities/animal-profile';
-import { AnimalProfileService } from 'src/app/_services/animal-profile.service';
+import { AnimalProfileService } from 'src/app/services/animal-profile.service';
 import { Chart} from 'chart.js';
 
 declare var window : any;

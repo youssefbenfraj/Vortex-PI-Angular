@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { AnimalProfile } from 'src/app/entities/animal-profile';
-import { AnimalProfileService } from 'src/app/_services/animal-profile.service';
+import { AnimalProfileService } from 'src/app/services/animal-profile.service';
 import { Router } from '@angular/router';
 
 declare var window: any;
@@ -39,12 +39,10 @@ export class AnimalProfileComponent implements OnInit {
     } 
   }
 
-
-  //formModalAdd: any;
-  formModalEdit: any;
   ModalShow:any;
   apDetail !: FormGroup;
   apObj : AnimalProfile = new AnimalProfile();
+  appObj : AnimalProfile = new AnimalProfile();
   apList : AnimalProfile[] = [];
 
   constructor(
@@ -53,17 +51,7 @@ export class AnimalProfileComponent implements OnInit {
     private apservice: AnimalProfileService
   ) { }
   
-  /*  
-  handleFileSelect(event:any) {
-    const file = event.target.files[0];
-    const reader = new FileReader();
-    reader.onload = () => {
-      const base64String = (reader.result as string).split(',')[1];
-      this.apObj.photoUrl_animal = base64String;
-    };
-    reader.readAsDataURL(file);
-  }
-*/
+  
   ngOnInit(): void {
 
       this.getAllAP();
@@ -110,18 +98,14 @@ export class AnimalProfileComponent implements OnInit {
       });
 
       
-      // this.formModalAdd=new  window.bootstrap.Modal(
-      //   document.getElementById('addAP')
-      // );
-
       this.ModalShow=new  window.bootstrap.Modal(
-        document.getElementById('ShowAP')
+        document.getElementById('showw')
       );
+      
   }
 
       addAP() {
         console.log(this.apDetail);
-        //this.apObj.id_user = this.apDetail.value.id_user;
         this.apObj.id_animal = this.apDetail.value.id_animal;
         this.apObj.name_animal = this.apDetail.value.name_animal;
         this.apObj.type_animal = this.apDetail.value.type_animal;
@@ -179,7 +163,6 @@ export class AnimalProfileComponent implements OnInit {
         this.url2=ap.photoUrl_animal ;
 
         
-        //this.url2=ap.photoUrl_animal ;
 
         
        
@@ -207,7 +190,6 @@ export class AnimalProfileComponent implements OnInit {
     
         this.apservice.updateAP(this.apObj).subscribe(res=>{
           console.log(res);
-         // this.closeModalEdit();
           this.getAllAP();
           
           alert("Animal Profile successfully edited");
@@ -238,22 +220,9 @@ export class AnimalProfileComponent implements OnInit {
       });
     }
 
-      // openModal() {
-      //   this.formModalAdd.show();
-      // }
-  
-      openModalEdit() {
-        if (this.formModalEdit && this.formModalEdit.show) {
-          this.formModalEdit.show();
-        }
+      
 
-      }
-      openModalShow() {
-        if (this.ModalShow && this.ModalShow.show) {
-          this.ModalShow.show();
-        }
-
-      }
+      
       gotoAC()
       {
         this.router.navigate(['/adoptioncenter']);
@@ -309,6 +278,10 @@ export class AnimalProfileComponent implements OnInit {
         behavioralDescription.style.display = 'none';
         }
     }
+      }
+      openModalShow(ap:AnimalProfile) {
+        this.ModalShow.show();
+        this.appObj=ap;
       }
      
 }

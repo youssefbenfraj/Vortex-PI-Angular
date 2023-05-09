@@ -17,6 +17,11 @@ import { ShowAdoptionapplicationsComponent } from './components/show-adoptionapp
 import { CheckAdoptionapplicationComponent } from './components/check-adoptionapplication/check-adoptionapplication.component';
 import { AdminAdoptionCenterComponent } from './components/admin-adoption-center/admin-adoption-center.component';
 
+import { Chart } from 'chart.js';
+import { registerables } from 'chart.js';
+
+Chart.register(...registerables);
+
 @NgModule({
   declarations: [
     AppComponent,

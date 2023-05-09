@@ -26,8 +26,6 @@ export class AnimalProfile {
 
     isVaccinated!:boolean;
 
-    isSterlizied!:boolean;
-
     isTrained!:boolean;
 
     medicalNeeds_animal!:boolean;

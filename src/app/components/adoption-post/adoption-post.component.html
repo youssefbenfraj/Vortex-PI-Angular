@@ -80,7 +80,56 @@
         </div>
     </nav>
     <!-- Navbar End -->
+    <!--modalshow-->
+    <div class="modal fade" id="showw"  tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Adoption Post details</h5>
+                <a class="close" href="adoptionpost">&times;</a>
+              </div>
+              <div class="modal-body">
+                <div class="container p-0">
+  
+                  <!---->
+                  
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Adoption Post details</h3>
+                    
+                        <div class="row g-3" >
+                            
+                        
+                          <div class="col-12 col-sm-7">
+                            <label for="type" class="label">ID Adoptionpost</label>
+                            <p>{{this.adpobj.id_adoptionpost}}</p>
+                          </div>
+                          <div class="col-7">
+                            <label for="type" class="label">Description</label>
+                            <p>{{this.adpobj.description_adoptionpost}}</p>
+                          </div>
 
+                          <div class="col-7">
+                            <label for="type" class="label">Status</label>
+                            <p>{{this.adpobj.status_adoptionpost}}</p>
+                          </div>
+                          <div class="col-12">
+                            <label for="gender" class="label" style="margin-right: 2cm;">Creation Date</label>
+                            <p>{{this.adpobj.creationdate_adoptionpost}}</p>
+                          </div>
+                          <div class="col-12">
+                            <label for="gender" class="label" style="margin-right: 2cm;">Adoption Date</label>
+                            <p>{{this.adpobj.adoptionDate}}</p>
+                          </div>
+                          
+                        </div>
+                    
+                
+                  <!---->
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+      <!--modalshowend-->
 
     <!-- Blog Start -->
     
@@ -185,9 +234,9 @@
                           <p class="card-text">Breed:   {{ adp.animalProfile.breed_animal }}</p>
                           <p class="card-text">Description:   {{ adp.description_adoptionpost }}</p>
                           <div class="btn-group" >
-                            <a   class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Show</a>
+                            <a   (click)="openModalShow(adp)" class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Show</a>
                             <a   class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Update</a>
-                            <a   class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Delete</a>
+                            <a   (click)="deleteADP(adp)"class="btn btn-primary" style="margin-left: 2px; margin-right: 2px;">Delete</a>
                           </div>
                         </div>
                       </div>
