@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AdoptionPost } from 'src/app/entities/adoption-post';
 import { AdoptionApplication } from 'src/app/entities/adoption-application';
 import { AdoptionApplicationService } from 'src/app/services/adoption-application.service';
@@ -9,12 +10,14 @@ import { Chart} from 'chart.js';
 
 declare var window : any;
 
+
 @Component({
   selector: 'app-admin-adoption-center',
   templateUrl: './admin-adoption-center.component.html',
   styleUrls: ['./admin-adoption-center.component.css']
 })
 export class AdminAdoptionCenterComponent implements OnInit {
+
 
   aplist: AnimalProfile[]= [];
   adplist: AdoptionPost[]= [];
@@ -116,4 +119,5 @@ export class AdminAdoptionCenterComponent implements OnInit {
         alert("Sorry unable to delete Adoption Application");
       })
     }
+
 }

@@ -1,0 +1,55 @@
+
+<!--ADMIN NAV BAR-->
+<app-admin-nav-bar></app-admin-nav-bar>
+<!--ADMIN NAV BAR-->
+
+
+
+
+  <!-- Add-->
+  <section class="donations">
+  <section class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+    </div>
+    </section>
+    
+     <!-- GET ALL DONATIONS-->
+     <table class="get-all">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Amount Donation</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date Donation </th>
+          <th scope="col" >Compaign Donated to</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let donation of donationList">
+          <th scope="row">{{donation.id_donation}}</th>
+          <td>{{donation.amount_donation}} $</td>
+          <td>{{donation.desc_donation}}</td>
+          <td>{{donation.date_donation}}</td>
+          <td>{{donation.compaign.title_compaign}}</td>
+          <td>
+            <button type="button" (click)="deleteDonation(donation)" class="btn btn-outline-danger">Delete</button>
+          </td> 
+        </tr>
+    
+      </tbody>
+    </table>
+  
+  </section>
+  
+  <section class="chart-section">
+    <h2 class="chart-section__title">Donations per Campaign</h2>
+    <div class="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
+  </section>
+  
+  
+  
+  
+  

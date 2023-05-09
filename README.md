@@ -25,3 +25,26 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+####### TO RUN THE PROJECT ##########
+############## ERROR ############
+
+PS C:\Users\Achraf\AngularProjects\Vortex-PI-Angular> ng serve -o
+ng : Impossible de charger le fichier C:\Users\Achraf\AppData\Roaming\npm\ng.ps1, car l’exécution de scripts est désactivée sur ce système. Pour plus 
+d’informations, consultez about_Execution_Policies à l’adresse https://go.microsoft.com/fwlink/?LinkID=135170.
+Au caractère Ligne:1 : 1
++ ng serve -o
++ ~~
+    + CategoryInfo          : Erreur de sécurité : (:) [], PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+
+
+############## SOLUTION ##############
+
+Ouvrez PowerShell en tant qu'administrateur.
+Exécutez la commande suivante: "Get-ExecutionPolicy". Cette commande vous indiquera la stratégie d'exécution actuelle de votre système.
+Si la stratégie actuelle est "Restricted", vous devez la modifier en exécutant la commande suivante: "Set-ExecutionPolicy RemoteSigned". Cette commande autorisera l'exécution des scripts signés à distance.
+
+####################################
+

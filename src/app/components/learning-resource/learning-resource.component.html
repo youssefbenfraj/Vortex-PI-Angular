@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PET SHOP - Pet Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="../assets/img/favicon.ico" rel="icon">
+
+  
+</head>
+
+<body>
+
+        <!-- Nav Bar -->
+
+        <app-nav-bar></app-nav-bar>
+
+        <!-- End Nav Bar -->
+
+
+    <!-- Blog Start -->
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <!-- Blog Detail Start -->
+                <div class="d-flex mb-3" >
+                    <small class="me-3"><i class="bi bi-bookmarks me-2"></i>{{learningResource.type_learningr}}</small>
+                    <small class="me-3"><i class="bi bi-bookmark-star-fill" style="width: 50px;"></i>{{learningResource.theme}}</small>
+                    <small ><i class="bi bi-calendar-date me-2" ></i>{{learningResource.creationdate_learningr}}</small>
+
+                    <div class="star-review" style="margin-left: 300px; width: 270px; ">
+                        <span class="star" *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                          <ng-container *ngIf="averageRatingScore >= i + 0.25">
+                            &#9733;
+                          </ng-container>
+                          <ng-container *ngIf="averageRatingScore < i + 0.25">
+                            &#9734;
+                          </ng-container>
+                        </span>
+                      </div>
+                      
+                </div>
+                <div class="mb-5">
+                    <h1 class="text-uppercase mb-4">{{ learningResource.title_learningr }}</h1>
+                    <img class="img-fluid w-100 rounded mb-5" src="{{learningResource.url_learningr}}" alt="">
+                    
+                    <p>{{ learningResource.desc_learningr }}</p>
+                  </div>
+                <!-- Blog Detail End -->
+
+                <!-- Comment List Start -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4" >Comments</h3>
+                    <div class="d-flex mb-4" *ngFor="let review of reviews">
+                      <img src="../assets/img/blog-2.jpg" class="img-fluid" style="width: 45px; height: 45px;">
+                      <div class="ps-3">
+                        <h6><a href="">Anonymous</a>  
+                            <div class="star-reviews" style="margin-bottom: -10px;">
+                            <span class="stars" *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
+                                <ng-container *ngIf="+review.rating >= i + 0.5">
+                                &#9733;
+                                </ng-container>
+                                <ng-container *ngIf="+review.rating < i + 0.5">
+                                &#9734;
+                                </ng-container>
+                            </span>
+                            </div>
+                        </h6>
+                            <p>{{ review.comment }} </p>
+                           
+                                              
+                      </div>
+                    </div>
+                  </div>
+                  
+                <!-- Comment List End -->
+
+<!-- Review Form Start -->
+<div class="bg-light rounded p-5">
+    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Leave a review</h3>
+    <form (ngSubmit)="addReview(learningResource.id_learningr)">
+      <div class="row g-3">
+        <div class="col-12">
+            <input  type="range" min="0" max="5" step="1" class="form-control-range" placeholder="Rating" style="color: gold;" [(ngModel)]="newReview.rating" name="rating">
+          </div>
+        <div class="col-12">
+          <textarea class="form-control bg-white border-0" rows="5" placeholder="Comment" [(ngModel)]="newReview.comment" name="comment"></textarea>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary w-100 py-3" type="submit">Submit Review</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <!-- Review Form End -->
+  
+
+            </div>
+
+            <!-- Sidebar Start -->
+            <div class="col-lg-4">
+                <!-- Search Form Start -->
+                <div class="mb-5">
+                    <div class="input-group">
+                        <input type="text" class="form-control p-3" placeholder="Keyword">
+                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+                <!-- Search Form End -->
+
+                <!-- Category Start -->
+                <div class="mb-5">
+                    <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Themes</h3>
+                    <div class="d-flex flex-column justify-content-start">
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>PET_TRAINING</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>PET_BEHAVIOR</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>PET_GROOMING</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>PET_HEALTH_AND_WELLNESS</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>PET_PRODUCTS_AND_ACCESSORIES</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>PET_INSURANCE</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>ANIMAL_RIGHTS_AND_WELFARE</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>VETERINARY_MEDICINE</a>
+                        <a class="h5 bg-light py-2 px-3 mb-2" href="#"><i class="bi bi-arrow-right me-2"></i>ANIMAL_PSYCHOLOGY</a>
+                    </div>
+                </div>
+                <!-- Category End -->
+
+                    <!-- Recent Post Start -->
+                    <div class="mb-5"   >
+                        <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4"></h3>
+                        <div class="d-flex overflow-hidden mb-3" *ngFor="let lr of lrList">
+                            <img class="img-fluid" src="{{lr.url_learningr}}"  style="width: 100px; height: 100px; object-fit: cover;" alt="">
+                            <a href="" class="h5 d-flex align-items-center bg-light px-3 mb-0">{{lr.title_learningr}}
+                            </a>
+                        </div>
+                       
+                    </div>
+                    <!-- Recent Post End -->
+
+                <!-- Image Start -->
+                <div class="mb-5">
+                    <img src="../assets/img/blog-1.jpg" alt="" class="img-fluid rounded">
+                </div>
+                <!-- Image End -->
+
+             <!-- Tags Start -->
+             <div class="mb-5">
+                <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Tag Cloud</h3>
+                <div class="d-flex flex-wrap m-n1">
+                    <a href="" class="btn btn-primary m-1">Design</a>
+                    <a href="" class="btn btn-primary m-1">Development</a>
+                    <a href="" class="btn btn-primary m-1">Marketing</a>
+                    <a href="" class="btn btn-primary m-1">SEO</a>
+                    <a href="" class="btn btn-primary m-1">Writing</a>
+                    <a href="" class="btn btn-primary m-1">Consulting</a>
+                    <a href="" class="btn btn-primary m-1">Design</a>
+                    <a href="" class="btn btn-primary m-1">Development</a>
+                    <a href="" class="btn btn-primary m-1">Marketing</a>
+                    <a href="" class="btn btn-primary m-1">SEO</a>
+                    <a href="" class="btn btn-primary m-1">Writing</a>
+                    <a href="" class="btn btn-primary m-1">Consulting</a>
+                </div>
+            </div>
+            <!-- Tags End -->
+
+            <!-- Plain Text Start -->
+            <div>
+                <h3 class="text-uppercase border-start border-5 border-primary ps-3 mb-4">Plain Text</h3>
+                <div class="bg-light text-center" style="padding: 30px;">
+                    <p>Pet friendly resources available.</p>
+                    <a href="" class="btn btn-primary py-2 px-4">Read More</a>
+                </div>
+            </div>
+            <!-- Plain Text End -->
+        </div>
+        <!-- Sidebar End -->
+    </div>
+</div>
+<!-- Blog End -->
+
+
+
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FOOTER -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+</body>
+
+</html>

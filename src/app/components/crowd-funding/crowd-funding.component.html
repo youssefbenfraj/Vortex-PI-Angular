@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>PET SHOP - Pet Shop Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="/img/favicon.ico" rel="icon">
+
+
+</head>
+
+<body>
+    <!-- Nav Bar -->
+
+    <app-nav-bar></app-nav-bar>
+
+    <!-- End Nav Bar -->
+    
+
+    <!-- Services Start -->
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="border-start border-5 border-primary ps-5 mb-5" style="max-width: 600px;">
+                <h6 class="text-primary text-uppercase">Campaigns</h6>
+                <h1 class="display-5 text-uppercase mb-0">Our Current Campaigns </h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-md-6" *ngFor="let compaign of CompaignList;let i=index">
+                  <div class="service-item bg-light d-flex p-4">
+                    <div>
+                      <h5 class="text-uppercase mb-3">{{compaign.title_compaign}}</h5>
+                      <p>{{compaign.desc_compaign}}</p>
+                      <div>
+                        <h6 class="text-uppercase mb-4"> Target : {{compaign.target_amount_compaign}} $</h6>
+                        <progress [value]="totalValues[i]" max="100">
+                          <span class="progress-text">50%</span>
+                        </progress>
+                      </div>
+                      <h6 class="text-uppercase mb-6" > END DATE : {{compaign.end_date_compaign}}</h6>
+                      <div>
+                        <a class="text-primary text-uppercase" (click)="showDonation(compaign.id_compaign)">Donate<i class="bi bi-chevron-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+            </div>
+        </div>
+    
+    <!-- Services End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid bg-testimonial py-5" style="margin: 45px 0;">
+        <div class="container py-5">
+            <div class="row justify-content-end">
+                <div class="col-lg-7">
+                    <div class="owl-carousel testimonial-carousel bg-white p-5">
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid mx-auto" src="../assets/img/testimonial-1.jpg" alt="">
+                                <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+                                    <i class="bi bi-chat-square-quote text-primary"></i>
+                                </div>
+                            </div>
+                            <p>Dolores sed duo clita tempor justo dolor et stet lorem kasd labore dolore lorem ipsum. At lorem lorem magna ut et, nonumy et labore et tempor diam tempor erat. Erat dolor rebum sit ipsum.</p>
+                            <hr class="w-25 mx-auto">
+                            <h5 class="text-uppercase">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                        <div class="testimonial-item text-center">
+                            <div class="position-relative mb-4">
+                                <img class="img-fluid mx-auto" src="../assets/img/testimonial-2.jpg" alt="">
+                                <div class="position-absolute top-100 start-50 translate-middle d-flex align-items-center justify-content-center bg-white" style="width: 45px; height: 45px;">
+                                    <i class="bi bi-chat-square-quote text-primary"></i>
+                                </div>
+                            </div>
+                            <hr class="w-25 mx-auto">
+                            <h5 class="text-uppercase">Client Name</h5>
+                            <span>Profession</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+    
+
+<!-- FOOTER -->
+<app-footer></app-footer>
+<!-- FOOTER -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+
+</body>
+
+</html>

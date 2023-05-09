@@ -1,9 +1,12 @@
 <!--ADMIN NAV BAR-->
-<!-- <app-admin-nav-bar></app-admin-nav-bar> -->
+
+<app-admin-nav-bar></app-admin-nav-bar>
+
 <!--ADMIN NAV BAR-->
 
 
 <section class="learning-resource">
+
 
   <a class="navbar-brand" style=" margin-top: 50px; color: black;" >Animal Profiles</a>
     <!-- TABLE 1-->
@@ -61,10 +64,12 @@
 
      <!-- TABLE 2-->
      <div style="width: 1500px; overflow-x: scroll;">
+
      <table class="get-all">
         <thead>
           <tr>
             <th scope="col">#</th>
+
             <th scope="col">ID Animal Profile</th>
             <th scope="col">Description</th>
             <th scope="col">Photo</th>
@@ -72,10 +77,12 @@
             <th scope="col">Adopter ID</th>
             <th scope="col">Adoption Date</th>
             <th scope="col">Creation Date</th>
+
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
+
           <tr *ngFor="let adp of adplist">
             <th scope="row">{{adp.id_adoptionpost}}</th>
             <td>{{adp.animalProfile.id_animal}}</td>
@@ -88,11 +95,13 @@
             <td>
              
               <button type="button" (click)="deletepost(adp)" class="btn btn-outline-danger" >Delete</button> 
+
             </td> 
           </tr>
       
         </tbody>
       </table>
+
      </div>
 
       <!-- TABLE 2-->
@@ -102,10 +111,12 @@
 
            <!-- TABLE 3-->
       <div style="width: 1500px; overflow-x: scroll;">
+
      <table class="get-all">
         <thead>
           <tr>
             <th scope="col">#</th>
+
             <th scope="col">ID Adoption Post</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -152,21 +163,26 @@
             <td>
              
               <button type="button" (click)="deleteapplication(app)" class="btn btn-outline-danger" >Delete</button> 
+
             </td> 
           </tr>
       
         </tbody>
       </table>
+
       </div>
 
       <!-- TABLE 3-->
 
 
 
+
       <!-- Charts  -->
 
 <section class="chart-section">
+
     <h2 class="chart-section__title">Adoption Application by Animal Type</h2>
+
     <div class="chart-container">
       <canvas id="myChart"></canvas>
     </div>
