@@ -10,8 +10,12 @@ pipeline {
             steps {
                 sh 'npm install'
                 sh 'npm run build --prod'
-                sh 'ng serve -o'
             }
         }
+          stage('test'){
+            steps{
+              sh'ng serve -o'
+            }
+          }
     }
 }
