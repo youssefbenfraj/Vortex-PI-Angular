@@ -1,12 +1,13 @@
 pipeline {
-  agent {
+  agent any
+    stages {
+        stage('Build') {
+          agent {
         docker {
              image 'node:latest'
              args '-u root'
                }
-         }    
-    stages {
-        stage('Build') {
+         } 
             steps {
                 sh 'npm install'
                 sh 'npm run build --prod'
