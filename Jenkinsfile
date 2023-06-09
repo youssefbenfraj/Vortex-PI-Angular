@@ -17,7 +17,7 @@ pipeline {
           agent {
            docker {
               image 'nginx:alpine'
-              args '-p 8081:80 -v $PWD/dist/rescue-the-stray:/usr/share/nginx/html:ro'
+              args '-d -p 8081:80 -v $PWD/dist/rescue-the-stray:/usr/share/nginx/html:ro'
               }
            }
         steps {
