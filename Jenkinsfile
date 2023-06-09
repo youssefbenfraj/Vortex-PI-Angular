@@ -9,10 +9,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-              dir('path/to/your/angular/app') {
                 sh 'npm install'
                 sh 'npm run build --prod'
-              }
             }
         }
         
