@@ -12,9 +12,9 @@ pipeline {
                 sh 'npm run build --prod'
             }
         }
-          stage('test'){
+          stage('Deploy'){
             steps{
-              sh'ng serve -o'
+              sh'pm2 restart all'
             }
           }
     }
