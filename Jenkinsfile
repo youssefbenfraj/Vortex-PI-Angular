@@ -13,9 +13,14 @@ pipeline {
             }
         }
       stage('Serve') {
-            steps {
-              sh 'docker run -d -p 8080:80 -v $PWD/dist/rescue-the-stray:/usr/share/nginx/html:ro nginx:alpine'
-             }
+          agent {
+        docker {
+          image 'nginx:alpine'
+          args '-p 8080:80 -v $PWD/dist/rescue-the-stray:/usr/share/nginx/html:ro'
+        }
+      }
+      steps {
+      }
         }
     }
 }
