@@ -12,10 +12,5 @@ pipeline {
                 sh 'npm run build --prod'
             }
         }
-          stage('Deploy'){
-            steps{
-              sh'pm2 restart all'
-            }
-          }
     }
 }
