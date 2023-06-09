@@ -14,15 +14,15 @@ pipeline {
             }
         }
       stage('Serve') {
-          agent {
+          /*agent {
            docker {
               image 'nginx:alpine'
               args '-d -p 8081:80 -v $PWD/dist/rescue-the-stray:/usr/share/nginx/html:ro'
               }
-           }
+           }*/
         steps {
-          sh 'echo "Starting NGINX server"'
-          }
+          sh 'docker build -t my-angular-app .'
+          sh 'docker run -d -p 8081:80 my-angular-app'          }
         }
     }
 }
