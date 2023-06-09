@@ -1,6 +1,9 @@
-node {
- 
-    
+pipline {
+  agent{
+    docker {
+            image 'node:latest'
+    }
+   }
     stages {
         stage('Build') {
             steps {
