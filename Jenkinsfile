@@ -16,14 +16,17 @@ pipeline {
     }
     
     stage('Run') {
-      agent {
+      /*agent {
         docker {
           image 'nginx:alpine'
           args '-d -p 8081:80 -v $PWD/dist/rescue-the-stray:/usr/share/nginx/html:ro'
         }
-      }
+      }*/
       steps {
-        sh 'echo "Starting NGINX server"'
+        sh '''
+              def containerId = docker.image('nginx:alpine').run("-p 8081:80 -v $PWD/dist/rescue-the-stray:/usr/share/nginx/html:ro -d")
+              echo "Container ID: ${containerId}"
+            '''
       }
     }
   }
