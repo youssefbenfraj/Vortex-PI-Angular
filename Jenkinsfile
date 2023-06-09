@@ -1,8 +1,8 @@
 pipeline {
     agent {
         docker {
-            image 'node:latest'
-            reuseNode true
+          image 'node:latest'
+          args '-u root'
         }
     }
     
