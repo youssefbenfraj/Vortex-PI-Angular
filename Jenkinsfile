@@ -23,8 +23,8 @@ pipeline {
         }
       }*/
       steps {
-        sh 'def containerId = docker.image('nginx:alpine').run("-p 8081:80 -v $PWD/dist/rescue-the-stray:/usr/share/nginx/html:ro -d")'
-        sh 'echo "Container ID: ${containerId}"'
+        def containerId = docker.image('nginx:alpine').run("-p 8081:80 -v $PWD/dist/rescue-the-stray:/usr/share/nginx/html:ro -d")
+        echo "Container ID: ${containerId}"
       }
     }
   }
