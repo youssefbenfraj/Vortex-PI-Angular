@@ -13,10 +13,9 @@ pipeline {
             }
         }
         
-        stage('Deploy') {
+        stage('Test') {
             steps {
-                    sh 'docker build -t my-angular-app .'
-                    sh 'docker run -d -p 8080:80 my-angular-app' // Run the Docker container
+                    sh 'ng serve -o'
             }
         }
     }
